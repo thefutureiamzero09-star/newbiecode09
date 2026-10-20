@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="starBtn">STAR</button>
+
+    <div id="sky"></div>
+</body>
+</html>
+
+<script>
+const starBtn = document.getElementById("starBtn");
+const sky = document.getElementById("sky");
+
+let meteorTimer;
+let starTimer;
+
+function createStars() {
+    for (let i = 0; i < 100; i++) {
+        const star = document.createElement("span");
+        star.className = "twinkle";
+        star.innerHTML = "✦";
+
+        star.style.left = Math.random() * 100 + "%";
+        star.style.top = Math.random() * 100 + "%";
+        star.style.fontSize = Math.random() * 4 + 2 + "px";
+        star.style.animationDelay = Math.random() * 3 + "s";
+
+        sky.appendChild(star);
+    }
+}
+function createMeteor() {
+    if (!sky.classList.contains("active")) return;
+
+    const meteor = document.createElement("div");
+    meteor.className = "meteor";
+
+    meteor.style.left = Math.random() * 120 + 20 + "%";
+    meteor.style.top = Math.random() * 60 - 10 + "%";
+    meteor.style.animationDuration =
+        (Math.random() * 1 + 1) + "s";
+
+    sky.appendChild(meteor);
+
+    setTimeout(() => meteor.remove(), 2200);
+}
+
+createStars();
+
+starBtn.addEventListener("click", () => {
+    const isActive = sky.classList.toggle("active");
+
+    if (isActive) {
+        starBtn.innerHTML = " STOP";
+        createMeteor();
+
+        meteorTimer = setInterval(createMeteor, 250);
+    } else {
+        starBtn.innerHTML = "STAR";
+        clearInterval(meteorTimer);
+
+        sky.querySelectorAll(".meteor").forEach(meteor => {
+            meteor.remove();
+        });
+    }
+});
+</script>

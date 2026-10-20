@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow </title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .slideshow {
+            width: 100%;
+            max-width: 1000px;
+            height: 450px;
+            margin: 30px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.start {
+            opacity: 1;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slideshow">
+        <div class="slide start">
+            <img src="/HtmlCssJs/Img/cod1.jpg" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="/HtmlCssJs/Img/cod2.jpg" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="/HtmlCssJs/Img/cod3.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="/HtmlCssJs/Img/cod4.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="/HtmlCssJs/Img/cod5.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        const slides = document.querySelectorAll(".slide");
+
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove("start");
+            currentSlide++;
+
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+            slides[currentSlide].classList.add("start");
+        }
+        setInterval(nextSlide, 3000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    overflow: hidden;
+    background: #080b20;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#starBtn {
+    position: relative;
+    padding: 16px 42px;
+    font-size: 20px;
+    color: white;
+    background: linear-gradient(135deg, #7b2ff7, #00c6ff);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#starBtn:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 40px #00c6ff;
+}
+#sky {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+#sky.active {
+    opacity: 1;
+}
+.meteor {
+    position: absolute;
+    width: 180px;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        white,
+        #7dd3fc,
+        transparent
+    );
+    border-radius: 50%;
+    box-shadow: 0 0 8px #7dd3fc;
+    transform: rotate(-35deg);
+    animation: shooting 1.5s linear forwards;
+}
+
+@keyframes shooting {
+    0% {
+        transform: translate(0, 0) rotate(-35deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-600px, 600px) rotate(-35deg);
+        opacity: 0;
+    }
+}
+.twinkle {
+    position: absolute;
+    color: white;
+    animation: twinkle 2s ease-in-out infinite alternate;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <div class="text">
+            <p>You can't connect the dots looking forward</p> 
+            <p>You can only connect them looking backward</p> 
+            <p>So you have to trust that the dots will somehow connect in your future.</p>
+            <p style="color:red">--- Steve Jobs ---</p>
+        </div>
+    </div>
+
+<style>
+    .content {
+        width: 1000px;
+        height: 600px;
+        margin:0 auto;
+        overflow: hidden;
+        position: relative; 
+    }
+    .text {
+        text-align: center;
+        position: absolute;
+        bottom: -600px;
+        width: 100%;
+        text-align: center;
+        font-size: 50px;
+        animation: runUp 20s linear infinite;
+    }
+    @keyframes runUp {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-1200px);
+        }
+    }
+</style>
+</body>
+</html>

@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff0e8;
+    font-family: Georgia, serif;
+}
+.card {
+    width: 90%;
+    max-width: 900px;
+    min-height: 500px;
+    background: linear-gradient(135deg, #fffaf5, #ffe6df);
+    border-radius: 20px;
+    box-shadow: 0 10px 35px #a9444420;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 40px 20px;
+    overflow: hidden;
+}
+.rose {
+    width: 250px;
+    height: 370px;
+    position: relative;
+    animation: appear 1.5s ease;
+}
+.flower {
+    width: 180px;
+    height: 170px;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    z-index: 2;
+    animation: sway 3s ease-in-out infinite;
+}
+.petal {
+    position: absolute;
+    width: 100px;
+    height: 120px;
+    background: linear-gradient(135deg, #ff304a, #b00020);
+    border-radius: 60% 40% 55% 45%;
+    box-shadow: inset -5px -5px 12px #70001855;
+}
+.petal1 {
+    top: 0;
+    left: 35px;
+    transform: rotate(-15deg);
+}
+.petal2 {
+    top: 25px;
+    left: 5px;
+    transform: rotate(-45deg);
+}
+.petal3 {
+    top: 25px;
+    right: 0;
+    transform: rotate(45deg);
+}
+.petal4 {
+    top: 48px;
+    left: 38px;
+    width: 80px;
+    height: 85px;
+    background: linear-gradient(135deg, #ff5265, #850018);
+    transform: rotate(10deg);
+}
+.center {
+    position: absolute;
+    width: 45px;
+    height: 55px;
+    background: #a00020;
+    border-radius: 50%;
+    top: 52px;
+    left: 68px;
+    box-shadow: inset 4px 2px 8px #ff6677;
+}
+.stem {
+    position: absolute;
+    width: 8px;
+    height: 230px;
+    background: linear-gradient(to right, #245c20, #70a34a);
+    top: 160px;
+    left: 115px;
+    transform: rotate(8deg);
+    border-radius: 10px;
+}
+.leaf {
+    position: absolute;
+    width: 75px;
+    height: 38px;
+    background: linear-gradient(135deg, #75a94b, #245c20);
+    border-radius: 0 100% 0 100%;
+}
+.leaf1 {
+    top: 215px;
+    left: 45px;
+    transform: rotate(10deg);
+}
+.leaf2 {
+    top: 270px;
+    left: 120px;
+    transform: rotate(65deg);
+}
+.ribbon {
+    position: absolute;
+    top: 265px;
+    left: 65px;
+    width: 70px;
+    height: 45px;
+    border: 7px solid #c90032;
+    border-radius: 50%;
+    transform: rotate(-15deg);
+}
+.message {
+    text-align: center;
+    color: #a00024;
+}
+.happy {
+    font-size: 38px;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+h1 {
+    font-size: clamp(35px, 5vw, 65px);
+    font-style: italic;
+    text-shadow: 2px 3px 3px #c0002420;
+}
+.heart {
+    font-size: 35px;
+    color: #e00035;
+    margin: 15px 0;
+}
+@keyframes sway {
+    0%, 100% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+}
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 600px) {
+    .card {
+        flex-direction: column;
+        padding: 25px 10px;
+    }
+    .rose {
+        transform: scale(0.8);
+        margin-bottom: -40px;
+    }
+    .happy {
+        font-size: 30px;
+    }
+    h1 {
+        font-size: 38px;
+    }
+    .wish {
+        font-size: 13px;
+    }
+}

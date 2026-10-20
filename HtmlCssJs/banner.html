@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to my website</h1>
+</body>
+</html>
+
+<style>    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        120deg,
+        #ff6b6b,
+        #845ec2,
+        #00c9a7,
+        #f9f871
+    );
+    background-size: 300% 300%;
+    animation: Changecolor 8s ease infinite;
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+}
+
+@keyframes Changecolor {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+</style>
